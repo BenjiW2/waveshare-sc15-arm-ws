@@ -1,0 +1,26 @@
+# ROS 2 workspace for a waveshare SC15 based arm i'm working on (`servo_ws`)
+
+* **Hardware** : Raspberry Pi 5 + 5x Waveshare SC-15 TTL bus servos + waveshare gripper-b w/ cf35-12 servo  
+* **Software** : ROS 2 Jazzy, custom ros2_control hardware interface  
+* **Packages** :
+  * `sc15_hw_iface_cpp` – C++ SystemInterface for the SC-15 bus
+  * `stservo_sdk_py`   – Python SDK for debugging / config
+  * launch & YAML configs in `config/` and `launch/`
+
+To build:
+
+```bash
+sudo apt update && sudo apt install ros-jazzy-desktop-full ros-jazzy-ros2-control ros-jazzy-ros2-controllers
+mkdir -p ~/servo_ws && cd ~/servo_ws
+git clone <this-repo> src
+colcon build --symlink-install
+source install/setup.bash
+
+ros2 launch sc15_hw_iface_cpp arm_control.launch.py   # coming soon
+
+```bash
+cat > LICENSE <<'EOF'
+MIT License
+Copyright (c) 2025 Benji Warburton
+...
+EOF
