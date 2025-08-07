@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot name="sc15_arm">
+  <link name="world"/>
+  <link name="base_link"/>
+  <link name="shoulder_link"/>
+  <link name="elbow_link"/>
+  <link name="wrist_pitch_link"/>
+  <link name="gripper_link"/>
+
+  <joint name="base_joint" type="continuous">
+    <parent link="world"/><child link="base_link"/>
+  </joint>
+  <joint name="shoulder_joint" type="continuous">
+    <parent link="world"/><child link="shoulder_link"/>
+  </joint>
+  <joint name="elbow_joint" type="continuous">
+    <parent link="world"/><child link="elbow_link"/>
+  </joint>
+  <joint name="wrist_pitch" type="continuous">
+    <parent link="world"/><child link="wrist_pitch_link"/>
+  </joint>
+  <joint name="gripper" type="continuous">
+    <parent link="world"/><child link="gripper_link"/>
+  </joint>
+
+  <ros2_control name="SC15Bus" type="system">
+    <hardware>
+      <plugin>sc15_hw_iface_cpp/SC15Bus</plugin>
+      <param name="device">/dev/scbus</param>
+      <param name="baud">1000000</param>
+    </hardware>
+    <joint name="base_joint"><param name="id">1</param></joint>
+    <joint name="shoulder_joint"><param name="id">2</param></joint>
+    <joint name="elbow_joint"><param name="id">3</param></joint>
+    <joint name="wrist_pitch"><param name="id">4</param></joint>
+    <joint name="gripper"><param name="id">5</param></joint>
+  </ros2_control>
+</robot>

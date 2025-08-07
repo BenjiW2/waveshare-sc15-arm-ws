@@ -1,0 +1,7 @@
+arm_controller:
+  ros__parameters:
+    type: joint_trajectory_controller/JointTrajectoryController
+    joints: [base_joint, elbow_joint, gripper, shoulder_joint, wrist_pitch]
+    command_interfaces: [position]
+    state_interfaces: [position]
+    state_publish_rate: 50

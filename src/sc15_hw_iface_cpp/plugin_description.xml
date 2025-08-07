@@ -1,0 +1,8 @@
+<library path="sc15_bus">
+  <class name="sc15_hw_iface_cpp/SC15Bus"
+         type="sc15_hw_iface_cpp::SC15Bus"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>SC-15 TTL bus hardware interface (C++)</description>
+  </class>
+</library>
+

@@ -1,0 +1,7 @@
+<library path="stservo_sdk_py">
+  <class name="sc15_hw_iface"
+         type="stservo_sdk_py.hardware.sc15_hw_iface:SC15Bus"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>SC-series servo bus hardware interface</description>
+  </class>
+</library>

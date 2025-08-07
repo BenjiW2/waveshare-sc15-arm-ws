@@ -1,0 +1,12 @@
+# --- colcon / ros2_control workspaces ---
+build/
+install/
+log/
+# IDEs
+.vscode/
+.idea/
+# Python cache
+__pycache__/
+*.pyc
+# Docs output
+docs/_build/

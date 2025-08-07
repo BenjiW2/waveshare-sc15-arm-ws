@@ -1,0 +1,13 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 50
+    hardware:
+      plugin: sc15_hw_iface_cpp/SC15Bus
+      device: "/dev/scbus"
+      baud: 1000000
+      joints:
+        - {name: base_joint,     id: '1'}
+        - {name: shoulder_joint, id: '2'}
+        - {name: elbow_joint,    id: '3'}
+        - {name: wrist_pitch,    id: '4'}
+        - {name: gripper,        id: '5'}
